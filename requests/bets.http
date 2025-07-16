@@ -1,0 +1,5 @@
+### Test API
+POST http://localhost/api/bets
+Content-Type: application/json
+
+{}
