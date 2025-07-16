@@ -17,4 +17,4 @@ kubectl exec testcurl -- \
   --data-urlencode 'username=maria' \
   --data-urlencode 'password=maria' \
   --data-urlencode 'client_secret=ucIBV9uUewtEnMit59Er9xODGQm2xEc1' \
-  --data-urlencode 'scope=openid'
+  --data-urlencode 'scope=openid' | jq
