@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kong-kong-metrics
+  namespace: kong
+  labels:
+    release: prometheus-stack # release do seu Prometheus
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: app
+      app.kubernetes.io/instance: kong
+      app.kubernetes.io/name: kong
+  namespaceSelector:
+    matchNames:
+      - kong
+  endpoints:
+    - port: status # corresponde a porta 10254
+      interval: 30s
+    - port: cmetrics # corresponde a porta 10255
+      interval: 30s
